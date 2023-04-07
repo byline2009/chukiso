@@ -1,0 +1,59 @@
+body {
+  font-size: 14px;
+  color: $gray-darker;
+  font-weight: 400;
+  line-height: 1;
+  font-family: $font-primary;
+}
+.btn {
+  display: inline-block;
+  color: rgb(84, 84, 84);
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.6;
+  font-family: $font-primary;
+  padding: 9px 32px;
+  border: 0;
+  outline: none;
+  border-radius: 100rem;
+  word-break: break-word;
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  &-white {
+    background-color: white;
+    color: #0056b3;
+    &:hover {
+      color: darken(#0056b3, 20%);
+    }
+  }
+  &-primary {
+    color: #ffffff;
+    background-color: $red;
+    transition: all 0.3s;
+    border: none;
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+  &-secondary {
+    color: #ffffff;
+    background-color: rgb(255, 190, 39);
+    border: none;
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+.container {
+  width: 960px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}

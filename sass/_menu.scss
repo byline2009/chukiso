@@ -1,0 +1,21 @@
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .menu-item {
+    color: rgb(84, 84, 84);
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6;
+    padding: 0 15px;
+    cursor: pointer;
+    &:hover {
+      color: rgb(27, 122, 242);
+    }
+  }
+  .menu-item + .menu-item {
+    margin-left: 15px;
+  }
+}
