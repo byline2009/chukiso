@@ -94,19 +94,60 @@ body {
 }
 
 .container {
-  width: 960px;
-  max-width: 960px;
+  width: 1140px;
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
   height: 100%;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 999999999;
+  transition: transform 1s cubic-bezier(0.92, 0.07, 0.49, 0.73);
+  background: #fff;
+  animation: loaderPulse 2s ease-out forwards;
+  animation-delay: 1s;
+}
+.loader .loader-logo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 360px;
+  height: auto;
+  animation: logoPulse 1s ease-out forwards;
+}
+@keyframes logoPulse {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1.2);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scaleX(1);
+  }
+}
+@keyframes loaderPulse {
+  100% {
+    transform: translateY(-100%);
+  }
 }
 
 .header {
   width: 100%;
   max-width: 100%;
   overflow: hidden;
-  height: 60px;
+  height: 68px;
   background-color: rgba(228, 228, 228, 0.1);
+  position: relative;
 }
 .header-container {
   max-width: 960px;
@@ -122,26 +163,9 @@ body {
   height: 100%;
 }
 .header-container .header-group .header-logo {
-  width: 161.618px;
-  height: 29.5px;
-  top: 12.5003px;
-  left: 0px;
-}
-.header-container .header-group .header-logo .image-wrapper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-}
-.header-container .header-group .header-logo .image-wrapper .image-background {
-  width: 161.618px;
-  height: 29.5px;
-  top: 0px;
-  left: 0px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("/images/logo-header.png");
+  width: 280px;
+  height: 58.5px;
+  object-fit: cover;
 }
 .header-container .header-group .right-header {
   display: flex;
@@ -150,6 +174,26 @@ body {
 }
 .header-container .header-group .right-header .hotline {
   margin-left: 15px;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 60px;
+}
+
+header.clone {
+  position: fixed;
+  top: -68px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transition: 0.2s top cubic-bezier(0.3, 0.73, 0.3, 0.74);
+  background-color: #ffffff;
+}
+
+body.down header.clone {
+  top: 0;
 }
 
 .menu {
@@ -226,7 +270,7 @@ body {
   display: block;
   border-radius: 8px;
   object-fit: cover;
-  height: 430px;
+  height: 510px;
 }
 @media (max-width: 480px) {
   .banner-home > img {
@@ -330,6 +374,7 @@ body {
   line-height: 1.6;
   display: inline-block;
   word-break: break-word;
+  margin-bottom: 24px;
 }
 @media (min-width: 960px) {
   .about .content-wrapper .left-about .content {
@@ -367,6 +412,88 @@ body {
 .about .content-wrapper .right-about .video-container {
   width: 560px;
   height: 314px;
+}
+
+.why {
+  background-color: rgba(235, 243, 255, 0.5);
+  width: 100%;
+  height: 450px;
+}
+.why .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.why .container .title {
+  margin-top: 32px;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: rgb(5, 31, 77);
+  text-align: center;
+}
+.why .container .caption {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgb(5, 31, 77);
+  text-align: center;
+  display: inline-block;
+  word-break: break-word;
+  width: 433px;
+  text-align: center;
+  position: relative;
+}
+.why .container .caption::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+  height: 1px;
+  background-color: red;
+}
+.why .container .why-list {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  margin-bottom: 80px;
+  width: 100%;
+}
+.why .container .why-list .why-item {
+  width: 210px;
+  max-width: 210px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+.why .container .why-list .why-item .why-symbol {
+  width: 80px;
+  height: 80px;
+  margin-top: 16px;
+}
+.why .container .why-list .why-item p {
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: rgb(5, 31, 77);
+  text-align: center;
+  padding: 0 15px;
+}
+.why .container .why-list .why-item:hover {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(5, 31, 77);
+  border-radius: 4px;
 }
 
 /*# sourceMappingURL=app.css.map */
