@@ -10,6 +10,7 @@
     height: 500px;
     .left-about {
       width: 50%;
+
       .logo-ca {
         width: 100%;
         max-width: 164px;
@@ -39,12 +40,15 @@
         color: rgb(5, 31, 77);
         font-size: 14px;
         line-height: 1.6;
-        display: inline-block;
+        display: block;
         word-break: break-word;
         margin-bottom: 24px;
         @media (min-width: 960px) {
           max-width: 80%;
         }
+      }
+      .btn {
+        display: inline-block;
       }
     }
     .right-about {

@@ -87,6 +87,16 @@ body {
 .btn-secondary:hover {
   background-color: #0056b3;
 }
+.btn-third {
+  border: 1px solid rgb(255, 94, 47);
+  color: rgb(255, 94, 47);
+  background-color: #ffffff;
+  transition: all 0.3s;
+  padding: 9px 48px;
+}
+.btn-third:hover {
+  background-color: #0056b3;
+}
 
 .wrapper {
   width: 100%;
@@ -139,6 +149,24 @@ body {
   100% {
     transform: translateY(-100%);
   }
+}
+
+.bg-primary {
+  background-image: linear-gradient(rgb(7, 58, 145), rgb(5, 31, 77));
+  background-color: rgba(0, 0, 0, 0);
+  background-size: auto;
+  background-origin: padding-box;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+
+.text-white {
+  color: #ffffff !important;
+}
+
+.bg-secondary {
+  background-color: rgb(7, 58, 145) !important;
 }
 
 .header {
@@ -215,6 +243,80 @@ body.down header.clone {
 }
 .menu .menu-item + .menu-item {
   margin-left: 15px;
+}
+
+.footer {
+  width: 100%;
+  height: 400px;
+}
+.footer .title {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.4;
+  color: rgb(5, 31, 77);
+  text-align: left;
+  width: 100%;
+  display: inline-block;
+  word-break: break-word;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 24px;
+}
+.footer .d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+.footer .d-flex .icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-right: 8px;
+}
+.footer .d-flex p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgb(5, 31, 77);
+  text-align: left;
+  margin-bottom: 0px;
+}
+.footer .bank {
+  margin-top: 24px;
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.footer .bank img {
+  object-fit: cover;
+  display: block;
+}
+.footer .bank .card {
+  width: 44px;
+  height: 28px;
+}
+.footer .bank .card + .card {
+  margin-left: 10px;
+}
+.footer .bank .bo-cong-thuong {
+  margin-left: 10px;
+  width: 72px;
+  height: 35px;
+}
+.footer .horizontal-line {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(5, 31, 78, 0.2);
+}
+.footer .end-text {
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.2;
+  color: rgb(5, 31, 77);
+  text-align: center;
 }
 
 .banner-top {
@@ -372,7 +474,7 @@ body.down header.clone {
   color: rgb(5, 31, 77);
   font-size: 14px;
   line-height: 1.6;
-  display: inline-block;
+  display: block;
   word-break: break-word;
   margin-bottom: 24px;
 }
@@ -380,6 +482,9 @@ body.down header.clone {
   .about .content-wrapper .left-about .content {
     max-width: 80%;
   }
+}
+.about .content-wrapper .left-about .btn {
+  display: inline-block;
 }
 .about .content-wrapper .right-about {
   width: 50%;
@@ -499,15 +604,310 @@ body.down header.clone {
 .service {
   width: 100%;
   height: 500px;
+  background-color: rgba(235, 243, 255, 0.5);
+}
+.service .title {
+  margin-top: 16px;
+  margin-bottom: 32px;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: rgb(13, 98, 242);
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  word-break: break-word;
+  background-size: cover;
+  background-position: center center;
 }
 .service .service-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 .service .service-list .service-item {
   position: relative;
+  width: calc(50% - 16px);
+  height: 306px;
+}
+.service .service-list .service-item .banner-group {
+  position: absolute;
+  top: calc(100% - 80px);
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 10;
+  display: flex;
+}
+.service .service-list .service-item .banner-group .left-banner {
+  position: relative;
   width: 50%;
+  height: 100%;
+  background-image: linear-gradient(90deg, rgba(234, 237, 238, 0), rgb(246, 18, 6));
+  background-color: rgba(0, 0, 0, 0);
+  background-size: auto;
+  background-origin: padding-box;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+.service .service-list .service-item .banner-group .right-banner {
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(-90deg, rgba(13, 98, 242, 0), rgb(246, 18, 6));
+  background-color: rgba(0, 0, 0, 0);
+  background-size: auto;
+  background-origin: padding-box;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+.service .service-list .service-item .banner-group .caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 40px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  word-break: break-word;
+  background-size: cover;
+  background-position: center center;
+}
+.service .service-list .service-item .service-image1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  background-image: url(/images/service-image1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.service .service-list .service-item .service-image2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  background-image: url(/images/service-image2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.service .service-list .service-item:first-child {
+  margin-right: 16px;
+}
+.service .service-list .service-item:nth-child(2) {
+  margin-left: 16px;
+}
+
+.price {
+  width: 100%;
+  height: 485px;
+}
+.price .container {
+  position: relative;
+}
+.price .container .title {
+  padding-top: 24px;
+  margin-left: 28px;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: rgb(5, 31, 77);
+  text-align: left;
+}
+.price .container .shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+}
+.price .container .price-list {
+  margin-top: 58px;
+}
+.price .container .price-list .price-item {
+  box-shadow: 0 0 1px rgba(44, 44, 44, 0.05), 0 4px 8px rgba(44, 44, 44, 0.1);
+  background: #fff;
+  overflow: hidden;
+  display: block;
+  transition: all 0.3s;
+}
+.price .container .price-list .price-item.last-item {
+  border-top-right-radius: 8px;
+}
+.price .container .price-list .price-item.middle-item {
+  border-top-left-radius: 0px;
+}
+.price .container .price-list .price-item:hover {
+  border: 1px solid rgb(5, 31, 77);
+}
+.price .container .price-list .price-item .label-new {
+  position: absolute;
+  top: 0;
+  left: 14px;
+  width: 80px;
+  height: 80px;
+}
+.price .container .price-list .price-item .label-new svg {
+  margin-left: 0px;
+}
+.price .container .price-list .price-item .label-new .label-title {
+  position: absolute;
+  width: 53px;
+  top: 8px;
+  left: 6px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgb(255, 255, 255);
+  transform: rotate(-44deg);
+}
+.price .container .price-list .price-item-first {
+  background-color: rgb(234, 242, 255);
+  border-top-left-radius: 8px;
+}
+.price .container .price-list .price-item-first.middle-item, .price .container .price-list .price-item-first.last-item {
+  border-top-left-radius: 0px;
+}
+.price .container .price-list .price-item-first.middle-item::after, .price .container .price-list .price-item-first.last-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(242, 67, 13);
+}
+.price .container .price-list .price-item-first .title-first {
+  padding-top: 24px;
+  font-size: 25px;
+  line-height: 40px;
+  font-weight: bold;
+  color: rgb(5, 31, 77);
+  text-align: center;
+  margin-bottom: 16px;
+}
+.price .container .price-list .price-item-first .sub-title-first {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: rgb(5, 31, 77);
+  text-align: center;
+  padding-bottom: 32px;
+}
+.price .container .price-list .price-item-second .title-second {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.price .container .price-list .price-item-third {
+  background-color: rgba(236, 244, 255, 0.6);
+}
+.price .container .price-list .price-item-third .title-third {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.price .container .price-list .price-item-fourth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.register {
+  width: 100%;
+  height: 450px;
+  position: relative;
+}
+.register::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -5%;
+  width: 491px;
+  height: 436.9px;
+  background-image: url(/images/faq-02.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -10;
+}
+.register::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 491px;
+  height: 436.9px;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  background-color: rgba(0, 0, 0, 0);
+  background-size: auto;
+  background-origin: padding-box;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+.register .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.register .content .left-content {
+  width: 500px;
+  max-width: 500px;
+}
+.register .content .right-content {
+  width: 400px;
+  height: 400px;
+}
+.register .title {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: rgb(10, 103, 233);
+  width: 100%;
+  display: inline-block;
+  word-break: break-word;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 32px;
+}
+.register ul > li {
+  list-style: none;
+  position: relative;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: rgb(48, 128, 232);
+  padding-bottom: 24px;
+  padding-left: 20px;
+}
+.register ul > li::before {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-size: 100% 100%;
+  top: 6px;
+  left: 0;
+  background-image: url(/images/circle-li.svg);
+  background-repeat: no-repeat;
+  content: "";
 }
 
 /*# sourceMappingURL=app.css.map */

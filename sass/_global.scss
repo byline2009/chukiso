@@ -37,10 +37,21 @@ body {
       background-color: #0056b3;
     }
   }
+
   &-secondary {
     color: #ffffff;
     background-color: rgb(255, 190, 39);
     border: none;
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+  &-third {
+    border: 1px solid rgb(255, 94, 47);
+    color: rgb(255, 94, 47);
+    background-color: #ffffff;
+    transition: all 0.3s;
+    padding: 9px 48px;
     &:hover {
       background-color: #0056b3;
     }
@@ -95,4 +106,19 @@ body {
       transform: translateY(-100%);
     }
   }
+}
+.bg-primary {
+  background-image: linear-gradient(rgb(7, 58, 145), rgb(5, 31, 77));
+  background-color: rgba(0, 0, 0, 0);
+  background-size: auto;
+  background-origin: padding-box;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+.text-white {
+  color: #ffffff !important;
+}
+.bg-secondary {
+  background-color: rgb(7, 58, 145) !important;
 }
