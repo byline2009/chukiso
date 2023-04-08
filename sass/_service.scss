@@ -1,0 +1,14 @@
+.service {
+    width: 100%;
+    height: 500px;
+    .service-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .service-item{
+            position: relative;
+            width: 50%;
+
+        }
+    }
+}
