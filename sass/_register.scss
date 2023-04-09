@@ -12,6 +12,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -10;
+    @media (max-width: 480px) {
+      width: 290px;
+      height: 230px;
+    }
   }
   &::before {
     position: absolute;
@@ -36,14 +40,25 @@
   .content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
     .left-content {
       width: 500px;
       max-width: 500px;
+      margin-top: 32px;
     }
     .right-content {
       width: 400px;
       height: 400px;
+      margin-top: 24px;
+
+      @media (max-width: 480px) {
+        width: 100%;
+        margin-bottom: 24px;
+        iframe {
+          width: 100% !important;
+        }
+      }
     }
   }
 
