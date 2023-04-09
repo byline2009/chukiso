@@ -61,13 +61,7 @@ body {
   width: 100%;
   min-height: 100vh;
 }
-.container {
-  width: 1140px;
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
-}
+
 .loader {
   width: 100vw;
   height: 100vh;
@@ -121,4 +115,44 @@ body {
 }
 .bg-secondary {
   background-color: rgb(7, 58, 145) !important;
+}
+.row {
+  @media (max-width: 480px) {
+    margin: 0 -16px;
+  }
+  & > * {
+    @media (max-width: 480px) {
+      padding: 0 16px;
+    }
+  }
+  &.row-spc-8 {
+    @media (max-width: 480px) {
+      margin: 0 -8px;
+    }
+    & > * {
+      @media (max-width: 480px) {
+        padding: 0 8px;
+      }
+    }
+  }
+}
+
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  @media (min-width: 1140px) {
+    max-width: 1140px;
+  }
+  @media (max-width: 480px) {
+    padding: 0 16px;
+  }
+}
+.ladi-headline {
+  @media (max-width: 480px) {
+    font-size: 28px m !important;
+    text-align: center;
+  }
 }

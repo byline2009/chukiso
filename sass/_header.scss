@@ -5,6 +5,9 @@
   height: 68px;
   background-color: rgba(228, 228, 228, 0.1);
   position: relative;
+  @media (max-width: 480px) {
+    display: none;
+  }
   &-container {
     max-width: 960px;
     margin-left: auto;

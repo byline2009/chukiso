@@ -103,14 +103,6 @@ body {
   min-height: 100vh;
 }
 
-.container {
-  width: 1140px;
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
-}
-
 .loader {
   width: 100vw;
   height: 100vh;
@@ -169,6 +161,55 @@ body {
   background-color: rgb(7, 58, 145) !important;
 }
 
+@media (max-width: 480px) {
+  .row {
+    margin: 0 -16px;
+  }
+}
+@media (max-width: 480px) {
+  .row > * {
+    padding: 0 16px;
+  }
+}
+@media (max-width: 480px) {
+  .row.row-spc-8 {
+    margin: 0 -8px;
+  }
+}
+@media (max-width: 480px) {
+  .row.row-spc-8 > * {
+    padding: 0 8px;
+  }
+}
+
+@media (min-width: 1140px) {
+  .container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+    max-width: 1140px;
+  }
+}
+@media (max-width: 480px) {
+  .container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ladi-headline {
+    font-size: 28px m !important;
+    text-align: center;
+  }
+}
+
 .header {
   width: 100%;
   max-width: 100%;
@@ -176,6 +217,11 @@ body {
   height: 68px;
   background-color: rgba(228, 228, 228, 0.1);
   position: relative;
+}
+@media (max-width: 480px) {
+  .header {
+    display: none;
+  }
 }
 .header-container {
   max-width: 960px;
@@ -353,7 +399,6 @@ body.down header.clone {
 @media (max-width: 480px) {
   .banner-home {
     width: 100%;
-    margin-bottom: 32px;
     margin-left: 0;
     min-height: 375px;
   }
@@ -436,16 +481,24 @@ body.down header.clone {
 .about {
   background-color: rgb(240, 246, 255);
 }
-.about .content-wrapper {
+.about .container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 500px;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+  padding-top: 24px;
 }
-.about .content-wrapper .left-about {
+.about .container .left-about {
   width: 50%;
 }
-.about .content-wrapper .left-about .logo-ca {
+@media (max-width: 480px) {
+  .about .container .left-about {
+    margin-bottom: 32px;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+  }
+}
+.about .container .left-about .logo-ca {
   width: 100%;
   max-width: 164px;
   height: 74px;
@@ -453,7 +506,7 @@ body.down header.clone {
   object-fit: contain;
   margin-bottom: 10px;
 }
-.about .content-wrapper .left-about .title {
+.about .container .left-about .title {
   color: rgb(13, 98, 242);
   font-size: 30px;
   font-weight: bold;
@@ -461,16 +514,16 @@ body.down header.clone {
   line-height: 1.2;
   margin-bottom: 32px;
 }
-.about .content-wrapper .left-about .title .sub-title {
+.about .container .left-about .title .sub-title {
   color: rgb(255, 93, 46);
 }
-.about .content-wrapper .left-about .caption {
+.about .container .left-about .caption {
   color: rgb(246, 18, 6);
   font-size: 16px;
   font-weight: bold;
   line-height: 1.6;
 }
-.about .content-wrapper .left-about .content {
+.about .container .left-about .content {
   color: rgb(5, 31, 77);
   font-size: 14px;
   line-height: 1.6;
@@ -479,25 +532,42 @@ body.down header.clone {
   margin-bottom: 24px;
 }
 @media (min-width: 960px) {
-  .about .content-wrapper .left-about .content {
+  .about .container .left-about .content {
     max-width: 80%;
   }
 }
-.about .content-wrapper .left-about .btn {
+@media (max-width: 480px) {
+  .about .container .left-about .content {
+    text-align: center;
+  }
+}
+.about .container .left-about .btn {
   display: inline-block;
 }
-.about .content-wrapper .right-about {
+@media (max-width: 480px) {
+  .about .container .left-about .btn {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+.about .container .right-about {
   width: 50%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.about .content-wrapper .right-about .image-wrapper {
+@media (max-width: 480px) {
+  .about .container .right-about {
+    margin-bottom: 32px;
+    width: 100%;
+    padding: 0px;
+  }
+}
+.about .container .right-about .image-wrapper {
   width: 540px;
   height: 320px;
 }
-.about .content-wrapper .right-about .image-wrapper .image-background {
+.about .container .right-about .image-wrapper .image-background {
   width: 100%;
   height: 100%;
   min-height: 320px;
@@ -514,15 +584,14 @@ body.down header.clone {
   border-color: rgb(0, 0, 0);
   border-width: 0px;
 }
-.about .content-wrapper .right-about .video-container {
-  width: 560px;
+.about .container .right-about .video-container {
+  width: 100%;
   height: 314px;
 }
 
 .why {
   background-color: rgba(235, 243, 255, 0.5);
   width: 100%;
-  height: 450px;
 }
 .why .container {
   display: flex;
@@ -550,6 +619,11 @@ body.down header.clone {
   text-align: center;
   position: relative;
 }
+@media (max-width: 480px) {
+  .why .container .caption {
+    width: 100%;
+  }
+}
 .why .container .caption::after {
   content: "";
   position: absolute;
@@ -565,14 +639,13 @@ body.down header.clone {
 .why .container .why-list {
   margin-top: 32px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 15px;
   margin-bottom: 80px;
   width: 100%;
 }
 .why .container .why-list .why-item {
-  width: 210px;
-  max-width: 210px;
   height: 250px;
   display: flex;
   align-items: center;
@@ -603,11 +676,10 @@ body.down header.clone {
 
 .service {
   width: 100%;
-  height: 500px;
-  background-color: rgba(235, 243, 255, 0.5);
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
-.service .title {
-  margin-top: 16px;
+.service .container .title {
   margin-bottom: 32px;
   font-size: 30px;
   font-weight: bold;
@@ -620,18 +692,24 @@ body.down header.clone {
   background-size: cover;
   background-position: center center;
 }
-.service .service-list {
+.service .container .service-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
-.service .service-list .service-item {
+.service .container .service-list .service-item {
   position: relative;
   width: calc(50% - 16px);
   height: 306px;
 }
-.service .service-list .service-item .banner-group {
+@media (max-width: 480px) {
+  .service .container .service-list .service-item {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}
+.service .container .service-list .service-item .banner-group {
   position: absolute;
   top: calc(100% - 80px);
   left: 0;
@@ -640,7 +718,7 @@ body.down header.clone {
   z-index: 10;
   display: flex;
 }
-.service .service-list .service-item .banner-group .left-banner {
+.service .container .service-list .service-item .banner-group .left-banner {
   position: relative;
   width: 50%;
   height: 100%;
@@ -652,7 +730,7 @@ body.down header.clone {
   background-repeat: repeat;
   background-attachment: scroll;
 }
-.service .service-list .service-item .banner-group .right-banner {
+.service .container .service-list .service-item .banner-group .right-banner {
   width: 50%;
   height: 100%;
   background-image: linear-gradient(-90deg, rgba(13, 98, 242, 0), rgb(246, 18, 6));
@@ -663,7 +741,7 @@ body.down header.clone {
   background-repeat: repeat;
   background-attachment: scroll;
 }
-.service .service-list .service-item .banner-group .caption {
+.service .container .service-list .service-item .banner-group .caption {
   position: absolute;
   left: 0;
   right: 0;
@@ -681,7 +759,7 @@ body.down header.clone {
   background-size: cover;
   background-position: center center;
 }
-.service .service-list .service-item .service-image1 {
+.service .container .service-list .service-item .service-image1 {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -691,7 +769,7 @@ body.down header.clone {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.service .service-list .service-item .service-image2 {
+.service .container .service-list .service-item .service-image2 {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -701,16 +779,9 @@ body.down header.clone {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.service .service-list .service-item:first-child {
-  margin-right: 16px;
-}
-.service .service-list .service-item:nth-child(2) {
-  margin-left: 16px;
-}
 
 .price {
   width: 100%;
-  height: 485px;
 }
 .price .container {
   position: relative;
@@ -832,7 +903,6 @@ body.down header.clone {
 
 .register {
   width: 100%;
-  height: 450px;
   position: relative;
 }
 .register::after {
