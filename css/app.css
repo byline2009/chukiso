@@ -209,21 +209,21 @@ a {
 
 @media (min-width: 1140px) {
   .container,
-.container-lg,
-.container-md,
-.container-sm,
-.container-xl,
-.container-xxl {
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
     max-width: 1140px;
   }
 }
 @media (max-width: 480px) {
   .container,
-.container-lg,
-.container-md,
-.container-sm,
-.container-xl,
-.container-xxl {
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
     padding: 0 16px;
   }
 }
@@ -1100,6 +1100,12 @@ body.down header.clone {
     height: 230px;
   }
 }
+@media (min-width: 1440px) {
+  .register::after {
+    top: 0;
+    left: 10%;
+  }
+}
 .register::before {
   position: absolute;
   z-index: -1;
@@ -1115,6 +1121,12 @@ body.down header.clone {
   background-position: 0% 0%;
   background-repeat: repeat;
   background-attachment: scroll;
+}
+@media (min-width: 1440px) {
+  .register::before {
+    top: 0;
+    left: 10%;
+  }
 }
 .register .content {
   display: flex;
