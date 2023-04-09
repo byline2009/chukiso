@@ -2,7 +2,6 @@
   background-color: rgb(240, 246, 255);
   position: relative;
   overflow: hidden;
-  z-index: -10;
   .ladi-box {
     position: absolute;
     background-color: rgba(255, 255, 255, 0.8);
@@ -10,6 +9,16 @@
     height: 306px;
     top: 92.5px;
     left: 610px;
+    overflow: hidden;
+    z-index: -1;
+  }
+  .ladi-box2 {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 556px;
+    height: 306px;
+    top: 120.5px;
+    left: 570px;
     overflow: hidden;
     z-index: -1;
   }
