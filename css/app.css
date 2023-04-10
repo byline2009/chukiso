@@ -47,12 +47,8 @@ body {
   font-weight: 400;
   line-height: 1;
   font-family: "Open+Sans", sans-serif;
-}
-
-body {
   width: 100%;
   overflow-x: hidden;
-  font-family: "Roboto";
 }
 
 a {
