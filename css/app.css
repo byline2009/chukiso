@@ -149,6 +149,11 @@ a {
   height: auto;
   animation: logoPulse 1s ease-out forwards;
 }
+@media (max-width: 768px) {
+  .loader .loader-logo {
+    width: 200px;
+  }
+}
 @keyframes logoPulse {
   0% {
     transform: scaleX(1);
@@ -402,21 +407,29 @@ body.down header.clone {
   background-color: rgb(242, 49, 38);
   height: 60px;
 }
-.banner-top .banner-group {
+.banner-top .container {
+  height: 100%;
+}
+.banner-top .container .banner-group {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   height: 100%;
 }
-.banner-top .banner-group .title {
+.banner-top .container .banner-group .title {
   color: rgb(242, 234, 5);
   font-size: 25px;
   font-weight: bold;
   text-align: center;
   line-height: 1.6;
   margin-right: 50px;
+  height: 100%;
+  margin: 0px;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 8px;
 }
-.banner-top .banner-group .title .sub-title {
+.banner-top .container .banner-group .title .sub-title {
   color: rgb(255, 255, 255);
   font-size: 18px;
   text-align: left;

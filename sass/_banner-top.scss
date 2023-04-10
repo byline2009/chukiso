@@ -1,23 +1,31 @@
 .banner-top {
   background-color: $red;
   height: 60px;
-  .banner-group {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  .container {
     height: 100%;
-    .title {
-      color: rgb(242, 234, 5);
-      font-size: 25px;
-      font-weight: bold;
-      text-align: center;
-      line-height: 1.6;
-      margin-right: 50px;
-      .sub-title {
-        color: rgb(255, 255, 255);
-        font-size: 18px;
-        text-align: left;
+    .banner-group {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+      .title {
+        color: rgb(242, 234, 5);
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
         line-height: 1.6;
+        margin-right: 50px;
+        height: 100%;
+        margin: 0px;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 8px;
+        .sub-title {
+          color: rgb(255, 255, 255);
+          font-size: 18px;
+          text-align: left;
+          line-height: 1.6;
+        }
       }
     }
   }
