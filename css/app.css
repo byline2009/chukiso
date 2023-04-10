@@ -1150,7 +1150,6 @@ body.down header.clone {
 }
 .register .content .right-content {
   width: 400px;
-  height: 400px;
   margin-top: 24px;
 }
 @media (max-width: 480px) {
