@@ -42,7 +42,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-
     <script type="text/javascript">
       var sticky = {
         sticky_after: 200,
@@ -53,10 +52,15 @@
           this.header.insertBefore(this.clone, null);
           this.scroll();
           this.events();
+          const fullname = document.getElementById('fullname');
+          fullname.addEventListener('input', inputHandler);
+          const email = document.getElementById('email');
+          email.addEventListener('input', inputHandler);
+          const phone = document.getElementById('phone');
+          phone.addEventListener('input', inputHandler);
         },
 
         scroll: function () {
-          console.log("scrolled");
           if (window.scrollY > this.sticky_after) {
             document.body.classList.add("down");
           } else {
@@ -84,17 +88,122 @@
           }
 
 
+      };
+      function callAPI () {
+        if (validate()){
+          const formData = new FormData();
+          const fullname = document.getElementById('fullname');
+          const phone = document.getElementById('phone');
+          const email = document.getElementById('email');
+          const tax = document.getElementById('tax');
+          const company = document.getElementById('company');
+
+
+          formData.append(`mauticform[ho_va_ten]`, fullname.value);
+          formData.append(`mauticform[so_dien_thoai]`, phone.value);
+          formData.append(`mauticform[email]`, email.value);
+          formData.append(`mauticform[ten_doanh_nghiep]`, company.value);
+          formData.append(`mauticform[ma_so_thue]`, tax.value);
+          formData.append(`mauticform[formId]`, 4);
+          formData.append(`mauticform[return]`, 'https://ctkv7.smart-sales.vn/marketing/form/4');
+          formData.append(`mauticform[formName]`, 'dangkysudungchukyso');
+          formData.append(`mauticform[messenger]`, 1);
+
+          fetch('https://ctkv7.smart-sales.vn/marketing/form/submit?formId=4', {
+          method: 'post',
+          body: formData,
+          mode:'no-cors'
+          })
+          .then((response)=> {
+             if(response.status == 0){
+               const fullname = document.getElementById('fullname');
+               const phone = document.getElementById('phone');
+               const email = document.getElementById('email');
+               const company = document.getElementById('company');
+               const tax = document.getElementById('tax');
+               fullname.value = '';
+               phone.value = '';
+               email.value = '';
+               company.value = '';
+               tax.value= '';
+
+              var notify_success = document.getElementById("notify_success");
+              notify_success.innerHTML = 'Xin cám ơn quý khách hàng đã quan tâm tới dịch vụ chữ ký số của MobiFone. Nhân viên phụ trách sẽ liên lạc lại với quý khách trong thời gian sớm nhất';
+             }
+
+          });
+          if(validate_fullname.value == ""){
+            document.getElementById("validate_fullname").innerHTML = "Mời bạn nhập đầy đủ thông tin ";
+          } 
+        }
+         
+
       }
+      function validate() {
+                  var  validate_fullname =  document.getElementById("validate_fullname");
+                  var validate_email =  document.getElementById("validate_email");
+                  var validate_phone=  document.getElementById("validate_phone")
+                  var fullname = document.getElementById("fullname");
+                  var email = document.getElementById("email");
+                  var phone = document.getElementById("phone");
+
+        if(fullname.value !== '' && email.value !== ''&& phone.value !== ''){
+          return true;
+        }else {
+
+          if (fullname.value  == ''){
+              document.getElementById("validate_fullname").innerHTML = "Mời bạn nhập đầy đủ thông tin ";
+          }
+           if(phone.value == ''){
+              document.getElementById("validate_phone").innerHTML = "Mời bạn nhập đầy đủ thông tin ";
+           }
+           if(email.value == ''){
+              document.getElementById("validate_email").innerHTML = "Mời bạn nhập đầy đủ thông tin ";
+           }
+           return false;
+        }
+       
+      }
+      const inputHandler = function(e) {
+          if(e.target.value == ""){
+             if(e.target.id == "fullname"){
+               document.getElementById("validate_fullname").innerHTML = "Mời bạn nhập đầy đủ thông tin ";
+             }
+              else if(e.target.id == "email"){
+               document.getElementById("validate_email").innerHTML = "Mời bạn nhập đầy đủ thông tin ";
+
+              }
+               else if(e.target.id == "phone"){
+               document.getElementById("validate_phone").innerHTML = "Mời bạn nhập đầy đủ thông tin ";
+
+              }
+          }else {
+             if(e.target.id == "fullname"){
+               document.getElementById("validate_fullname").innerHTML = "";
+             }
+              else if(e.target.id == "email"){
+               document.getElementById("validate_email").innerHTML = "";
+
+             }
+              else if(e.target.id == "phone"){
+               document.getElementById("validate_phone").innerHTML = "";
+
+            }
+         }
+        }
 
       document.addEventListener("DOMContentLoaded", sticky.init.bind(sticky));
+      
+
+
     </script>
   </head>
 
   <body>
     <div class="wrapper">
-      <div class="loader ">
+      <!-- <div class="loader ">
         <img  class="loader-logo" src="/images/logo-header.png" alt="loader logo">
-      </div>
+      </div> -->
       <header class="header" id="check">
         <div class="container">
           <div class="header-group">
@@ -588,8 +697,32 @@
 
             </div>
             <div class="right-content">
+              <div class="signup">
+                <h4 class="signup-heading">Form đăng kí chữ kí số </h4>
+                <form action="#!" name = "myForm" class="signup-form" autocomplete="off" onsubmit = "return(callAPI());">
+                  <label for="fullname" class="signup-label">Họ và tên </label>
+                  <input type="text" id="fullname" class="signup-input" placeholder="Nhập tên của bạn">
+                  <span  class = "validate-alert" id="validate_fullname"></span><br> 
+                  <label for="phone" class="signup-label">Số điện thoai </label>
+                  <input type="text" id="phone" class="signup-input" placeholder="Nhập sdt của bạn">
+                  <span  class = "validate-alert" id="validate_phone"></span><br> 
+                  <label for="email" class="signup-label">Email</label>
+                  <input type="email" id="email" class="signup-input" placeholder="Nhập mail của bạn">
+                  <span  class = "validate-alert" id="validate_email"></span><br> 
+                  <label for="company" class="signup-label">Tên doanh nghiệp</label>
+                  <input type="text" id="company" class="signup-input" placeholder="Nhập tên doanh nghiệp của bạn">
+                  <span  class = "validate-alert" id="validate_company"></span><br> 
+                  <label for="tax" class="signup-label">Mã số thuế</label>
+                  <input type="text" id="tax" class="signup-input" placeholder="Nhập mã số thuế của bạn">
+                  <span  class = "validate-alert" id="validate_tax"></span><br> 
+                  <button class="btn btn-primary">Gửi</button>
+                  <p  style="color: green; margin-top: 10px" id="notify_success"></p><br> 
+
+                </form>
+                
+              </div>
                             <!--<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf6fe-kov232qZSGFU231Lkx5ecQ4lwXe1zv78IjQm58M9MfQ/viewform?embedded=true" width="400" height="400" frameborder="0" marginheight="0" marginwidth="0">Đang tải…</iframe>-->
-                            <iframe src="//ctkv7.smart-sales.vn/marketing/form/4" width="400" height="650"><p>Your browser does not support iframes.</p></iframe>
+                            <!-- <iframe src="//ctkv7.smart-sales.vn/marketing/form/4" width="400" height="650"><p>Your browser does not support iframes.</p></iframe> -->
             </div>
           </div>  
         </div>
