@@ -90,6 +90,8 @@
 
       };
       function callAPI () {
+        // e.preventDefault();
+        console.log('check')
         if (validate()){
           const formData = new FormData();
           const fullname = document.getElementById('fullname');
@@ -699,23 +701,23 @@
             <div class="right-content">
               <div class="signup">
                 <h4 class="signup-heading">Form đăng kí chữ kí số </h4>
-                <form action="#!" name = "myForm" class="signup-form" autocomplete="off" onsubmit = "return(callAPI());">
-                  <label for="fullname" class="signup-label">Họ và tên </label>
+                <form action="#!" name = "myForm" class="signup-form" autocomplete="off" onsubmit = "callAPI();return false">
+                  <!-- <label for="fullname" class="signup-label">Họ và tên </label> -->
                   <input type="text" id="fullname" class="signup-input" placeholder="Nhập tên của bạn">
                   <span  class = "validate-alert" id="validate_fullname"></span><br> 
-                  <label for="phone" class="signup-label">Số điện thoai </label>
+                  <!-- <label for="phone" class="signup-label">Số điện thoai </label> -->
                   <input type="text" id="phone" class="signup-input" placeholder="Nhập sdt của bạn">
                   <span  class = "validate-alert" id="validate_phone"></span><br> 
-                  <label for="email" class="signup-label">Email</label>
+                  <!-- <label for="email" class="signup-label">Email</label> -->
                   <input type="email" id="email" class="signup-input" placeholder="Nhập mail của bạn">
                   <span  class = "validate-alert" id="validate_email"></span><br> 
-                  <label for="company" class="signup-label">Tên doanh nghiệp</label>
+                  <!-- <label for="company" class="signup-label">Tên doanh nghiệp</label> -->
                   <input type="text" id="company" class="signup-input" placeholder="Nhập tên doanh nghiệp của bạn">
                   <span  class = "validate-alert" id="validate_company"></span><br> 
-                  <label for="tax" class="signup-label">Mã số thuế</label>
+                  <!-- <label for="tax" class="signup-label">Mã số thuế</label> -->
                   <input type="text" id="tax" class="signup-input" placeholder="Nhập mã số thuế của bạn">
                   <span  class = "validate-alert" id="validate_tax"></span><br> 
-                  <button class="btn btn-primary">Gửi</button>
+                  <button  class="btn btn-primary">Gửi</button>
                   <p  style="color: green; margin-top: 10px" id="notify_success"></p><br> 
 
                 </form>

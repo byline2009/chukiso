@@ -1261,7 +1261,7 @@ body.down header.clone {
   outline: none;
   display: inline-block;
   width: 100%;
-  border-radius: 14px;
+  border-radius: 12px;
   background-color: rgb(130, 201, 30);
   font-family: "Poppins", sans-serif;
   cursor: pointer;
