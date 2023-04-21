@@ -1167,6 +1167,7 @@ body.down header.clone {
   font-weight: bold;
   color: #373941;
   margin-bottom: 24px;
+  text-align: center;
 }
 .register .content .right-content .signup-social {
   padding: 10px;
@@ -1283,6 +1284,16 @@ body.down header.clone {
   color: red;
   margin-bottom: 10px;
   display: block;
+}
+.register .content .right-content .send-btn {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.register .content .right-content .wrapper-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 480px) {
   .register .content .right-content {

@@ -75,6 +75,7 @@
         font-weight: bold;
         color: #373941;
         margin-bottom: 24px;
+        text-align: center;
       }
       .signup-social {
         padding: 10px;
@@ -191,6 +192,16 @@
         color: red;
         margin-bottom: 10px;
         display: block;
+      }
+      .send-btn {
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+      .wrapper-button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       @media (max-width: 480px) {
